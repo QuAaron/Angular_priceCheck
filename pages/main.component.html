@@ -1,0 +1,41 @@
+<p>main page</p>
+<div class="page-header">
+    I am the top bar
+</div>
+<div class="row">
+    <div class="col-md-2 col-md-offset-1">
+        <ul class="list-group itemList">
+            <li>
+                <input class="searchBar" type="text" placeholder="search">
+                <button class="searchButton" type="submit">
+                    <i class="glyphicon glyphicon-search"></i>
+                </button>
+            </li>
+            <br>
+            <li *ngFor='let item of itemDetail' (click)='selectItem(item)'><a href="javascript:void(0)" class="list-group-item">{{item.item_Name}}</a></li>
+        </ul>
+    </div>
+    <div class="row itemDetial panel  col-md-9">
+        <div class="col-md-8">
+            <img class="itemImage" [src]="imgsrc">
+        </div>
+        <div class="col-md-4" *ngIf="itemPrice">
+            <p>price: {{itemPrice}}</p>
+            <p>Detial:Charge syncs automatically and wirelessly to tablets, computers and 200+ leading iOS, Android and Windows
+                smartphones using Bluetooth 4.0 wireless technology. </p>
+            <ul>
+                <li>Syncing range: 20 feet </li>
+                <li>Call notifications via Bluetooth 4.0 </li>
+                <li>Syncing to computers requires Internet connection and USB port </li>
+                <li>Syncing to mobile devices requires Bluetooth and Internet connection</li>
+                <li>Syncs with Windows Vista and later, Mac OS X 10.6 and up, iPhone 4S and later, iPad 3 gen. and later, and
+                    leading Android and Windows devices</li>
+            </ul>
+            <input type="button" value = "Check Price Change" (click)='showChart(item)'>
+        </div>
+    </div>
+
+
+</div>
+
+<hr>
